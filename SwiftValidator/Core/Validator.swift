@@ -131,9 +131,9 @@ public class Validator {
     /**
      This method checks to see if all fields in validator are valid.
      
-     - returns: No return value.
+     - returns: Returns true if validation successful
      */
-    public func validate(delegate:ValidationDelegate) {
+    public func validate(delegate:ValidationDelegate) -> Bool {
         
         self.validateAllFields()
         
@@ -143,6 +143,7 @@ public class Validator {
             delegate.validationFailed(errors)
         }
         
+        return errors.isEmpty
     }
     
     /**
